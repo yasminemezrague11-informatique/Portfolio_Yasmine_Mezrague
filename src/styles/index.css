@@ -528,36 +528,57 @@ body.dark-mode::after {
 
 
 
+/* =====================================================
+   CSS RESPONSIVE MOBILE - COMMENTS INUTILIS
+   ===================================================== */
 
-
-/* ===== RESPONSIVE MOBILE ===== */
+/* === MEDIA QUERY POUR TABLETTE / MOBILE max-width: 768px === */
 @media (max-width: 768px) {
-  
-  /* Intro */
+
+  /* --- Intro Section --- */
   .intro-title {
     font-size: 2.2rem;
   }
+
   .intro-subtitle {
     font-size: 1.2rem;
   }
 
-  /* About section */
+  /* --- About Section --- */
   .about-flex {
-    grid-template-columns: 1fr;
-    padding: 2rem 1rem;
-  }
-  .about-right {
-    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* image + texte */
+    align-items: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
   }
 
-  /* Services */
+  .about-left img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .about-right {
+    background: #ffffff;
+    padding: 2rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+  }
+
+  /* --- Services Section --- */
   .services-flex {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     padding: 0 1rem;
   }
 
-  /* Projects */
+  /* --- Projects Section --- */
   .projects-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -568,102 +589,112 @@ body.dark-mode::after {
     padding: 1.5rem;
   }
 
-  /* Certificates */
+  /* --- Certificates Section --- */
   .certificates {
     padding: 0 1rem;
   }
+
   .certificate-card {
     flex-direction: column;
     align-items: flex-start;
     padding: 20px;
     gap: 10px;
   }
+
   .cert-link {
     text-align: left;
   }
 
-  /* Footer */
+  /* --- Footer Section --- */
   .footer-container {
     padding: 0 1rem;
   }
-}
 
-/* ===== RESPONSIVE SMALL MOBILE ===== */
+} /* FIN MEDIA QUERY 768px */
+
+/* === MEDIA QUERY POUR PETITS ÉCRANS max-width: 480px === */
 @media (max-width: 480px) {
+
   .intro-title {
     font-size: 1.8rem;
   }
+
   .intro-subtitle {
     font-size: 1rem;
   }
+
   .about-right,
   .service-box,
   .project-card,
   .certificate-card {
     padding: 1rem;
   }
+
   .logo {
     font-size: 1.2rem;
   }
-  /* ===== NAVBAR COMPACT ===== */
-.navbar {
-  position: fixed;
-  width: 100%;
-  max-width: 1200px;  /* limite la largeur sur grand écran */
-  margin: 0 auto;     /* centre la navbar */
-  top: 0;
-  z-index: 100;
-  padding: 0.8rem 2rem; /* un peu plus compact */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(15, 23, 42, 0.85);
-  backdrop-filter: blur(10px);
-}
 
-.nav-links {
-  display: flex;
-  gap: 1rem; /* réduit l’espacement entre les liens */
-  list-style: none;
-}
-
-/* hover underline effect */
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  bottom: -4px; /* un peu plus proche du texte */
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background: #38bdf8;
-  transition: 0.4s;
-}
-
-.nav-links a:hover::after {
-  width: 100%;
-}
-
-/* ===== RESPONSIVE NAVBAR ===== */
-@media (max-width: 900px) {
+  /* --- Navbar Desktop & Mobile --- */
   .navbar {
-    flex-direction: column;
-    padding: 1rem 1.5rem;
+    position: fixed;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    top: 0;
+    z-index: 100;
+    padding: 0.8rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(10px);
   }
 
   .nav-links {
-    flex-direction: column;
-    gap: 0.8rem; /* liens plus serrés */
-    margin-top: 0.5rem;
-    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 1.2rem;
+    list-style: none;
   }
 
   .nav-links a {
-    display: block;
-    text-align: center;
-    padding: 0.5rem 0;
+    display: inline-block;
+    position: relative;
+    padding: 0.2rem 0;
   }
-}
 
-}
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #38bdf8;
+    transition: 0.4s;
+  }
 
+  .nav-links a:hover::after {
+    width: 100%;
+  }
 
+  /* --- Navbar Mobile --- */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      padding: 1rem 1.5rem;
+    }
+
+    .nav-links {
+      flex-direction: column;
+      gap: 0.8rem;
+      margin-top: 0.5rem;
+      width: 100%;
+    }
+
+    .nav-links a {
+      text-align: center;
+    }
+  }
+
+} 
