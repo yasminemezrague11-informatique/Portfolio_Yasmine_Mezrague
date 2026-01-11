@@ -616,3 +616,63 @@ body.dark-mode::after {
     font-size: 0.9rem;
   }
 }
+
+
+/* ===== NAVBAR COMPACT ===== */
+.navbar {
+  position: fixed;
+  width: 100%;
+  max-width: 1200px;  /* limite la largeur sur grand écran */
+  margin: 0 auto;     /* centre la navbar */
+  top: 0;
+  z-index: 100;
+  padding: 0.8rem 2rem; /* un peu plus compact */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(10px);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem; /* réduit l’espacement entre les liens */
+  list-style: none;
+}
+
+/* hover underline effect */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px; /* un peu plus proche du texte */
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #38bdf8;
+  transition: 0.4s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ===== RESPONSIVE NAVBAR ===== */
+@media (max-width: 900px) {
+  .navbar {
+    flex-direction: column;
+    padding: 1rem 1.5rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 0.8rem; /* liens plus serrés */
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    text-align: center;
+    padding: 0.5rem 0;
+  }
+}
