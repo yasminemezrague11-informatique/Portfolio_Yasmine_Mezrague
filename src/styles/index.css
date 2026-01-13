@@ -1035,13 +1035,12 @@ body.dark-mode .interet-card span {
 
 
 .logo {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.6rem;
-  font-weight: 700;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
   letter-spacing: 1px;
-  color: #ffffff;
-  text-transform: uppercase;
 }
+
 
 body:not(.dark-mode) .logo {
   color: #0f172a;
