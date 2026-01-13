@@ -48,12 +48,6 @@ body.dark-mode h3 {
   backdrop-filter: blur(10px);
 }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #ffffff;
-}
-
 .nav-links {
   display: flex;
   gap: 2rem;
@@ -816,9 +810,7 @@ body.dark-mode .interet-card span {
     flex-wrap: wrap;
   }
 
-  .logo {
-    font-size: 1.2rem;
-  }
+  
 
   .nav-links {
     width: 100%;
