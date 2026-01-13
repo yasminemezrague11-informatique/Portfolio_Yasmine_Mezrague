@@ -823,8 +823,9 @@ body.dark-mode .interet-card span {
   }
   
   .logo {
-    font-size: 1rem; /* plus petit sur mobile */
+    font-size: 0.7rem; /* plus petit sur mobile */
     letter-spacing: 0.3px;
+    font-weight: 700;
   }
 
   /* si plus tard tu ajoutes un bouton burger */
