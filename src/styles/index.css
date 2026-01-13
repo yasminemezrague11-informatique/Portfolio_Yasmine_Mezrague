@@ -887,7 +887,8 @@ body.dark-mode .interet-card span {
   }
 
   .about-left img {
-    height: auto;
+    height: auto; 
+    border-radius: 0px;
   }
 
   .about-right {
