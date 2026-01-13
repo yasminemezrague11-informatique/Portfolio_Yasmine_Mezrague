@@ -58,8 +58,6 @@ const projects = [
 // ---------------------------
 // Composant principal Home
 // ---------------------------
-const [menuOpen, setMenuOpen] = useState(false);
-
 const Home = () => {
   // Gestion du mode sombre
   const [darkMode, setDarkMode] = useState(true);
@@ -191,7 +189,7 @@ const Home = () => {
         <h2 className="title-a text-center">Services</h2>
         <div className="line-mf"></div>
         <div className="services-flex">
-          {[{ name: "Codage / Développement", icon: "fa-code" },
+          {[{ name: "Développement / codage ", icon: "fa-code" },
             { name: "Analyse Fonctionnelle", icon: "fa-chart-line" },
             { name: "Conception Web", icon: "fa-paint-brush" }].map((service, i) => (
             <div key={i} className="service-box">
