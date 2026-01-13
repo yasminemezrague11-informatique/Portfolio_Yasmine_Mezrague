@@ -1128,7 +1128,7 @@ body.dark-mode .interet-card span {
   .nav-links {
     position: fixed; /* menu qui reste au-dessus */
     top: 0;
-    right: 0;
+    left: 0;
     width: 70%;
     height: 100vh;
     flex-direction: column;

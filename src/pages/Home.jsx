@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import "../styles/index.css";
 import avatar from "../assets/avatar.jpg";
 
-// ---------------------------
-// Liste des projets
-// ---------------------------
+// ============================
+// LISTE DES PROJETS
+// ============================
 const projects = [
   {
     title: "Space Invaders",
@@ -55,30 +55,40 @@ const projects = [
   },
 ];
 
-// ---------------------------
-// Composant principal Home
-// ---------------------------
+// ============================
+// COMPOSANT PRINCIPAL : HOME
+// ============================
 const Home = () => {
-  // Gestion du mode sombre
+  // ----------------------------
+  // ÉTAT : MODE SOMBRE ET MENU
+  // ----------------------------
   const [darkMode, setDarkMode] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
-  
-  
-  const handleNavClick = (id) => {
-    setMenuOpen(false); // ferme le menu
-    const section = document.getElementById(id);
-    if (section) {
-      const yOffset = -70; // ajuste selon la hauteur de ton header
-      const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: "smooth" });
-    }
-  };
 
+  // ----------------------------
+  // EFFET : APPLICATION DU MODE SOMBRE
+  // ----------------------------
   useEffect(() => {
     if (darkMode) document.body.classList.add("dark-mode");
     else document.body.classList.remove("dark-mode");
   }, [darkMode]);
 
+  // ----------------------------
+  // FONCTION : NAVIGATION LISSÉE
+  // ----------------------------
+  const handleNavClick = (id) => {
+    setMenuOpen(false);
+    const section = document.getElementById(id);
+    if (section) {
+      const yOffset = -70; // ajuste selon la hauteur du header
+      const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+
+  // ============================
+  // RENDER : COMPOSANT HOME
+  // ============================
   return (
     <div className="home">
 
@@ -86,35 +96,38 @@ const Home = () => {
           NAVBAR
       ========================= */}
       <nav className="navbar">
+        {/* Logo Desktop */}
+        <a href="#debut" className="logo desktop-logo">Yasmine Mezrague</a>
 
-  {/* Logo Desktop */}
-  <a href="#debut" className="logo desktop-logo">Yasmine Mezrague</a>
+        {/* Hamburger Mobile */}
+        <button
+          className="hamburger"
+          onClick={() => {
+            const nav = document.querySelector('.nav-links');
+            nav.classList.toggle('active');
+          }}
+          aria-label="Menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
-  {/* Hamburger Mobile */}
-  <button className="hamburger" onClick={() => {
-    const nav = document.querySelector('.nav-links');
-    nav.classList.toggle('active');
-  }} aria-label="Menu">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
+        {/* Menu */}
+        <ul className="nav-links">
+          <li><a href="#about">À propos</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#parcours">Parcours</a></li>
+          <li><a href="#portfolio">Projets</a></li>
+          <li><a href="#certificates">Certificats</a></li>
+          <li><a href="#footer">Contact</a></li>
+        </ul>
 
-  {/* Menu */}
-  <ul className="nav-links">
-    <li><a href="#about">À propos</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#parcours">Parcours</a></li>
-    <li><a href="#portfolio">Projets</a></li>
-    <li><a href="#certificates">Certificats</a></li>
-    <li><a href="#footer">Contact</a></li>
-  </ul>
-
-  {/* Dark Mode Toggle */}
-  <button className="dark-mode-toggle" onClick={() => setDarkMode(!darkMode)}>
-    {darkMode ? "☀️" : "🌙"}
-  </button>
-</nav>
+        {/* Dark Mode Toggle */}
+        <button className="dark-mode-toggle" onClick={() => setDarkMode(!darkMode)}>
+          {darkMode ? "☀️" : "🌙"}
+        </button>
+      </nav>
 
       {/* =========================
           SECTION INTRO
@@ -136,23 +149,13 @@ const Home = () => {
 
           {/* Icônes réseaux sociaux */}
           <div className="intro-icons">
-            <a
-              href="https://www.linkedin.com/in/yasmine-mezrague-071a68319/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-            >
+            <a href="https://www.linkedin.com/in/yasmine-mezrague-071a68319/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <i className="fab fa-linkedin"></i>
             </a>
             <a href="#footer" aria-label="Email">
               <i className="fa fa-envelope"></i>
             </a>
-            <a
-              href="https://github.com/yasminemezrague11-informatique"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-            >
+            <a href="https://github.com/yasminemezrague11-informatique" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
               <i className="fab fa-github"></i>
             </a>
           </div>
@@ -173,7 +176,7 @@ const Home = () => {
           {/* Description & compétences */}
           <div className="about-right">
             <div className="about-info">
-              <h3>À propos de moi</h3><br></br>
+              <h3>À propos de moi</h3><br />
               <p>
                 Profil hybride, je conçois et développe des solutions numériques complètes — sites web, applications mobiles et outils logiciels. J’accompagne chaque projet de l’analyse fonctionnelle à la mise en production, en passant par la conception, le développement et le suivi du cycle de vie. Passionnée par l’optimisation des processus et l’expérience utilisateur, je combine rigueur technique et compréhension des besoins métiers pour créer des solutions efficaces et adaptées.
               </p>
@@ -183,11 +186,7 @@ const Home = () => {
                 <li><span>Email :</span> mezragueyasmine92@gmail.com</li>
                 <li>
                   <span>GitHub :</span>
-                  <a
-                    href="https://github.com/yasminemezrague11-informatique"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a href="https://github.com/yasminemezrague11-informatique" target="_blank" rel="noopener noreferrer">
                     yasminemezrague11-informatique
                   </a>
                 </li>
@@ -204,7 +203,6 @@ const Home = () => {
                 <i className="fa-solid fa-diagram-project" title="Scrum / Agile"></i>
                 <i className="fa-solid fa-chart-column" title="Power BI"></i>
               </div>
-
             </div>
           </div>
         </div>
@@ -335,7 +333,7 @@ const Home = () => {
       </section>
 
       {/* =========================
-          SECTION CENTRES D'INTERÊT
+          SECTION CENTRES D'INTÉRÊT
       ========================= */}
       <section id="interets" className="interets sect-pt4 sect-mt4">
         <h2 className="title-a text-center">Centres d'Intérêt</h2>
@@ -355,7 +353,7 @@ const Home = () => {
             </div>
           ))}
         </div>
-      </section><br></br><br></br>
+      </section><br /><br />
 
       {/* =========================
           FOOTER MODERNE
