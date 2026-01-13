@@ -102,7 +102,7 @@ const Home = () => {
       >
         <div className="overlay-itro"></div>
         <div className="intro-content">
-          <h1 className="intro-title">Salut, je suis Yasmine Mezrague</h1>
+          <h1 className="intro-title">Bonjour, je suis Yasmine Mezrague</h1>
           <p className="intro-subtitle">
             Développeuse Full Stack & Analyste Fonctionnelle Junior
           </p>
