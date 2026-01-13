@@ -808,6 +808,8 @@ body.dark-mode .interet-card span {
   .navbar {
     padding: 1rem 1.2rem;
     flex-wrap: wrap;
+    background: transparent !important; /* fond transparent */
+    backdrop-filter: none;
   }
 
   
@@ -1035,6 +1037,7 @@ body.dark-mode .interet-card span {
   body.dark-mode .intro-subtitle {
     color: #38bdf8;
   }
+
 }
 
 
@@ -1052,4 +1055,5 @@ body.dark-mode .interet-card span {
 .logo:hover {
   letter-spacing: 1.2px;
 }
+
 
