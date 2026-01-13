@@ -1044,17 +1044,6 @@ body.dark-mode .interet-card span {
   transition: all 0.3s ease;
 }
 
-.logo span {
-  font-weight: 700;
-  color: #38bdf8; /* touche subtile */
-}
-
-/* Mode clair */
-body:not(.dark-mode) .logo {
-  color: #0f172a;
-}
-
-/* Hover très discret */
 .logo:hover {
   letter-spacing: 1.2px;
 }

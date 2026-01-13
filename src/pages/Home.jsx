@@ -74,7 +74,7 @@ const Home = () => {
           NAVBAR
       ========================= */}
       <nav className="navbar">
-        <a href="#debut" className="logo">Yasmine <span>Mezrague</span></a>
+        <a href="#debut" className="logo">Yasmine Mezrague</a>
         <ul className="nav-links">
           <li><a href="#about">À propos</a></li>
           <li><a href="#services">Services</a></li>
