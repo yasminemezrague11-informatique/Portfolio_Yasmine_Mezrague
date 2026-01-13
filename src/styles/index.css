@@ -1017,3 +1017,46 @@ body.dark-mode .interet-card span {
     font-size: 1.2rem;
   }
 }
+
+
+@media (max-width: 768px) {
+
+  /* MODE CLAIR */
+  body:not(.dark-mode) .intro-title {
+    color: #0f172a; /* bleu foncé / noir lisible */
+  }
+
+  body:not(.dark-mode) .intro-subtitle {
+    color: #0078ff;
+  }
+
+  /* MODE SOMBRE (sécurité) */
+  body.dark-mode .intro-title {
+    color: #ffffff;
+  }
+
+  body.dark-mode .intro-subtitle {
+    color: #38bdf8;
+  }
+}
+
+
+
+.logo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+body:not(.dark-mode) .logo {
+  color: #0f172a;
+}
+ 
+.logo:hover {
+  color: #38bdf8;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+}
