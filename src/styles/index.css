@@ -1119,6 +1119,9 @@ body.dark-mode .interet-card span {
   display: flex;
   gap: 2rem;
   list-style: none;
+  left: 0;         /* position à gauche */
+  right: auto;     /* s’assure qu’il n’y a pas de décalage à droite */
+  text-align: left;
 }
 
 /* Version mobile du menu : vertical et caché par défaut */
@@ -1126,15 +1129,15 @@ body.dark-mode .interet-card span {
   .nav-links {
     position: absolute;
     top: 60px; /* sous la navbar */
-    left: 0;   /* forcé à gauche */
-    right: auto; /* s'assure qu'il n'y a pas de décalage à droite */
+    left: 0;
+    right : auto;
     width: 100%;
+    text-align: left;
     flex-direction: column;
     background-color: rgba(15, 23, 42, 0.95);
     padding: 1rem 0;
     gap: 1rem;
     display: none; /* caché par défaut */
-    text-align: left; /* texte aligné à gauche */
   }
 
   .nav-links.active {
