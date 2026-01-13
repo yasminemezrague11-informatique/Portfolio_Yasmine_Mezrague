@@ -1098,6 +1098,8 @@ body.dark-mode .interet-card span {
   border: none;
   cursor: pointer;
   z-index: 110;
+  font-size: 1.5rem; /* pour le X et ☰ */
+  color: #fff;
 }
 
 .hamburger span {
@@ -1124,28 +1126,39 @@ body.dark-mode .interet-card span {
 /* Version mobile du menu : vertical et caché par défaut */
 @media (max-width: 768px) {
   .nav-links {
-    position: absolute;
-    top: 60px; /* sous la navbar */
-    left: 0;
-    width: 100%;
+    position: fixed; /* menu qui reste au-dessus */
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100vh;
     flex-direction: column;
-    background-color: rgba(15, 23, 42, 0.95);
-    padding: 1rem 0;
-    gap: 1rem;
-    display: none; /* caché par défaut */
+    background-color: rgba(15, 23, 42, 0.95); /* semi-transparent */
+    padding-top: 3rem;
+    padding-left: 1.5rem;
+    gap: 2rem;
+    transform: translateX(100%); /* caché par défaut */
+    transition: transform 0.3s ease-in-out;
+    z-index: 105;
   }
 
   .nav-links.active {
-    display: flex; /* affiché quand hamburger cliqué */
+    transform: translateX(0); /* glisse depuis la droite */
   }
 
   .nav-links li {
-    text-align: center;
+    text-align: left;
+    font-size: 1.2rem;
   }
 
   .nav-links a {
-    font-size: 1.2rem;
     color: #ffffff;
+    text-decoration: none;
+    display: block;
     padding: 0.5rem 0;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: #f39c12; /* couleur hover */
   }
 }

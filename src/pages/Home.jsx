@@ -62,6 +62,18 @@ const Home = () => {
   // Gestion du mode sombre
   const [darkMode, setDarkMode] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
+  
+  
+  const handleNavClick = (id) => {
+    setMenuOpen(false); // ferme le menu
+    const section = document.getElementById(id);
+    if (section) {
+      const yOffset = -70; // ajuste selon la hauteur de ton header
+      const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+
   useEffect(() => {
     if (darkMode) document.body.classList.add("dark-mode");
     else document.body.classList.remove("dark-mode");
@@ -73,10 +85,7 @@ const Home = () => {
       {/* =========================
           NAVBAR
       ========================= */}
-      {/* =========================
-    NAVBAR RESPONSIVE
-========================= */}
-<nav className="navbar">
+      <nav className="navbar">
 
   {/* Logo Desktop */}
   <a href="#debut" className="logo desktop-logo">Yasmine Mezrague</a>
@@ -106,7 +115,6 @@ const Home = () => {
     {darkMode ? "☀️" : "🌙"}
   </button>
 </nav>
-
 
       {/* =========================
           SECTION INTRO
