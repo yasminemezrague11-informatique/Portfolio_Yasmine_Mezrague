@@ -1034,20 +1034,27 @@ body.dark-mode .interet-card span {
 
 
 
+/* ===== LOGO RAFFINÉ ===== */
 .logo {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.5rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.75rem;
   font-weight: 600;
-  letter-spacing: 1px;
+  letter-spacing: 0.6px;
+  color: #ffffff;
+  transition: all 0.3s ease;
 }
 
+.logo span {
+  font-weight: 700;
+  color: #38bdf8; /* touche subtile */
+}
 
+/* Mode clair */
 body:not(.dark-mode) .logo {
   color: #0f172a;
 }
- 
+
+/* Hover très discret */
 .logo:hover {
-  color: #38bdf8;
-  letter-spacing: 2px;
-  transition: all 0.3s ease;
+  letter-spacing: 1.2px;
 }
