@@ -61,7 +61,7 @@ const projects = [
 const Home = () => {
   // Gestion du mode sombre
   const [darkMode, setDarkMode] = useState(true);
-
+  const [menuOpen, setMenuOpen] = useState(false);
   useEffect(() => {
     if (darkMode) document.body.classList.add("dark-mode");
     else document.body.classList.remove("dark-mode");
@@ -73,21 +73,40 @@ const Home = () => {
       {/* =========================
           NAVBAR
       ========================= */}
-      <nav className="navbar">
-        <a href="#debut" className="logo">Yasmine Mezrague</a>
-        
-        <ul className="nav-links">
-          <li><a href="#about">À propos</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#parcours">Parcours</a></li>
-          <li><a href="#portfolio">Projets</a></li>
-          <li><a href="#certificates">Certificats</a></li>
-          <li><a href="#footer">Contact</a></li>
-        </ul>
-        <button className="dark-mode-toggle" onClick={() => setDarkMode(!darkMode)}>
-          {darkMode ? "☀️" : "🌙"}
-        </button>
-      </nav>
+      {/* =========================
+    NAVBAR RESPONSIVE
+========================= */}
+<nav className="navbar">
+
+  {/* Logo Desktop */}
+  <a href="#debut" className="logo desktop-logo">Yasmine Mezrague</a>
+
+  {/* Hamburger Mobile */}
+  <button className="hamburger" onClick={() => {
+    const nav = document.querySelector('.nav-links');
+    nav.classList.toggle('active');
+  }} aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  {/* Menu */}
+  <ul className="nav-links">
+    <li><a href="#about">À propos</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#parcours">Parcours</a></li>
+    <li><a href="#portfolio">Projets</a></li>
+    <li><a href="#certificates">Certificats</a></li>
+    <li><a href="#footer">Contact</a></li>
+  </ul>
+
+  {/* Dark Mode Toggle */}
+  <button className="dark-mode-toggle" onClick={() => setDarkMode(!darkMode)}>
+    {darkMode ? "☀️" : "🌙"}
+  </button>
+</nav>
+
 
       {/* =========================
           SECTION INTRO
