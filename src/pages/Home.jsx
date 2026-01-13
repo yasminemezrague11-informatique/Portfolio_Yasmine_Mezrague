@@ -59,9 +59,9 @@ const projects = [
 // Composant principal Home
 // ---------------------------
 const Home = () => {
-  const [darkMode, setDarkMode] = useState(false);
-
   // Gestion du mode sombre
+  const [darkMode, setDarkMode] = useState(true);
+
   useEffect(() => {
     if (darkMode) document.body.classList.add("dark-mode");
     else document.body.classList.remove("dark-mode");
@@ -70,27 +70,27 @@ const Home = () => {
   return (
     <div className="home">
 
-      {/* ---------------------------
+      {/* =========================
           NAVBAR
-      --------------------------- */}
+      ========================= */}
       <nav className="navbar">
-        <a href="#home" className="logo">Yasmine Mezrague</a>
+        <a href="#debut" className="logo">Yasmine Mezrague</a>
         <ul className="nav-links">
-          <li><a href="#debut">Home</a></li>
           <li><a href="#about">À propos</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#footer">Contact</a></li>
+          <li><a href="#parcours">Parcours</a></li>
+          <li><a href="#portfolio">Projets</a></li>
           <li><a href="#certificates">Certificats</a></li>
+          <li><a href="#footer">Contact</a></li>
         </ul>
         <button className="dark-mode-toggle" onClick={() => setDarkMode(!darkMode)}>
           {darkMode ? "☀️" : "🌙"}
         </button>
       </nav>
 
-      {/* ---------------------------
+      {/* =========================
           SECTION INTRO
-      --------------------------- */}
+      ========================= */}
       <section
         id="debut"
         className="intro bg-image"
@@ -101,71 +101,97 @@ const Home = () => {
       >
         <div className="overlay-itro"></div>
         <div className="intro-content">
-          <h1 className="intro-title">Bonjour, je suis Yasmine Mezrague</h1>
-          <p className="intro-subtitle">Développeuse Full Stack & Passionnée de Design</p>
+          <h1 className="intro-title">Salut, je suis Yasmine Mezrague</h1>
+          <p className="intro-subtitle">
+            Développeuse Full Stack & Analyste Fonctionnelle Junior
+          </p>
+
+          {/* Icônes réseaux sociaux */}
+          <div className="intro-icons">
+            <a
+              href="https://www.linkedin.com/in/yasmine-mezrague-071a68319/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <i className="fab fa-linkedin"></i>
+            </a>
+            <a href="#footer" aria-label="Email">
+              <i className="fa fa-envelope"></i>
+            </a>
+            <a
+              href="https://github.com/yasminemezrague11-informatique"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
+              <i className="fab fa-github"></i>
+            </a>
+          </div>
         </div>
       </section>
 
-      {/* ---------------------------
+      {/* =========================
           SECTION ABOUT
-      --------------------------- */}
+      ========================= */}
       <section id="about" className="about-mf sect-pt4 sect-mt4">
         <div className="about-flex">
+
+          {/* Photo */}
           <div className="about-left">
             <img src={avatar} alt="avatar" className="img-fluid" />
           </div>
+
+          {/* Description & compétences */}
           <div className="about-right">
             <div className="about-info">
-              <h3>À propos de moi</h3>
+              <h3>À propos de moi</h3><br></br>
               <p>
-                Profil hybride, je conçois et développe des solutions numériques complètes — sites web, applications mobiles ou outils logiciels — tout en assurant l’analyse, la conception et le suivi du cycle de vie des projets.
+                Profil hybride, je conçois et développe des solutions numériques complètes — sites web, applications mobiles et outils logiciels. J’accompagne chaque projet de l’analyse fonctionnelle à la mise en production, en passant par la conception, le développement et le suivi du cycle de vie. Passionnée par l’optimisation des processus et l’expérience utilisateur, je combine rigueur technique et compréhension des besoins métiers pour créer des solutions efficaces et adaptées.
               </p>
+
               <ul className="list-ico">
-                <li><span>Nom:</span> Yasmine Mezrague</li>
-                <li><span>Email:</span> mezragueyasmine92@gmail.com</li>
+                <li><span>Nom :</span> Yasmine Mezrague</li>
+                <li><span>Email :</span> mezragueyasmine92@gmail.com</li>
                 <li>
-                  <span>GitHub:</span> 
-                  <a href="https://github.com/yasminemezrague11-informatique" target="_blank" rel="noopener noreferrer">
+                  <span>GitHub :</span>
+                  <a
+                    href="https://github.com/yasminemezrague11-informatique"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     yasminemezrague11-informatique
                   </a>
                 </li>
               </ul>
 
-              {/* Compétences avec barre de progression */}
-              <div className="skill-mf">
-                {[
-                  { name: "Python", width: "90%" },
-                  { name: "HTML / CSS / JS", width: "85%" },
-                  { name: "React", width: "80%" },
-                  { name: "C", width: "60%" },
-                  { name: "Scrum / Agile", width: "70%" },
-                  { name: "Power BI", width: "75%" },
-                ].map((skill, i) => (
-                  <div key={i}>
-                    <p>{skill.name}</p>
-                    <div className="progress">
-                      <div className="progress-bar" style={{ width: skill.width }}></div>
-                    </div>
-                  </div>
-                ))}
+              {/* Compétences en icônes */}
+              <div className="skills-icons">
+                <i className="fa-brands fa-python" title="Python"></i>
+                <i className="fa-brands fa-html5" title="HTML"></i>
+                <i className="fa-brands fa-css3-alt" title="CSS"></i>
+                <i className="fa-brands fa-js" title="JavaScript"></i>
+                <i className="fa-brands fa-react" title="React"></i>
+                <i className="fa-solid fa-c" title="C"></i>
+                <i className="fa-solid fa-diagram-project" title="Scrum / Agile"></i>
+                <i className="fa-solid fa-chart-column" title="Power BI"></i>
               </div>
+
             </div>
           </div>
         </div>
       </section>
 
-      {/* ---------------------------
+      {/* =========================
           SECTION SERVICES
-      --------------------------- */}
+      ========================= */}
       <section id="services" className="services sect-pt4 sect-mt4">
         <h2 className="title-a text-center">Services</h2>
         <div className="line-mf"></div>
         <div className="services-flex">
-          {[
-            { name: "Conception Web", icon: "fa-code" },
+          {[{ name: "Codage / Développement", icon: "fa-code" },
             { name: "Analyse Fonctionnelle", icon: "fa-chart-line" },
-            { name: "Web Design", icon: "fa-paint-brush" },
-          ].map((service, i) => (
+            { name: "Conception Web", icon: "fa-paint-brush" }].map((service, i) => (
             <div key={i} className="service-box">
               <div className="ico-circle">
                 <i className={`fa ${service.icon}`}></i>
@@ -176,9 +202,32 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ---------------------------
-          SECTION PORTFOLIO
-      --------------------------- */}
+      {/* =========================
+          SECTION PARCOURS / TIMELINE
+      ========================= */}
+      <section id="parcours" className="parcours sect-pt4 sect-mt4">
+        <h2 className="title-a text-center">Mon Parcours</h2>
+        <div className="line-mf"></div>
+
+        <div className="timeline">
+          {[
+            { period: "(En cours)", title: "LICENCE 3 INFORMATIQUE", place: "Université d’Artois, Lens, France" },
+            { period: "09/2024 – 06/2025", title: "MASTER 1 - SPÉCIALITÉ ISI", place: "Université de Mouloud Mammerie, Lens, France" },
+            { period: "09/2021 – 06/2024", title: "LICENCE 3 INFORMATIQUE", place: "Université de Mouloud Mammerie, Tizi-Ouzou, Algérie" },
+            { period: "09/2018 – 07/2021", title: "BAC SCIENCES EXPÉRIMENTALES", place: "Lycée des Martyrs Chekroun, Tizi-Ouzou, Algérie" }
+          ].map((item, i) => (
+            <div key={i} className="timeline-item">
+              <span className="timeline-period">{item.period}</span>
+              <h4 className="timeline-title">{item.title}</h4>
+              <p className="timeline-place">{item.place}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* =========================
+          SECTION PROJETS
+      ========================= */}
       <section id="portfolio" className="portfolio sect-pt4 sect-mt4">
         <h2 className="title-a text-center">Projets</h2>
         <div className="line-mf"></div>
@@ -190,23 +239,44 @@ const Home = () => {
               <p>{proj.description}</p>
               <p><strong>Compétences :</strong> {proj.skills}</p>
               {proj.pdf && (
-                <a href={proj.pdf} className="pdf-link" target="_blank" rel="noopener noreferrer">
-                  Voir PDF
-                </a>
+                <a href={proj.pdf} className="pdf-link" target="_blank" rel="noopener noreferrer">Voir PDF</a>
               )}
               {proj.link && (
-                <a href={proj.link} className="pdf-link" target="_blank" rel="noopener noreferrer">
-                  Voir le site
-                </a>
+                <a href={proj.link} className="pdf-link" target="_blank" rel="noopener noreferrer">Voir le site</a>
               )}
             </div>
           ))}
         </div>
       </section>
 
-      {/* ---------------------------
+      {/* =========================
+          SECTION LANGUES
+      ========================= */}
+      <section id="langues" className="langues sect-pt4 sect-mt4">
+        <h2 className="title-a text-center">Langues</h2>
+        <div className="line-mf"></div>
+
+        <div className="languages-grid">
+          {[
+            { name: "Français", level: "C2" },
+            { name: "Anglais", level: "C1" },
+            { name: "Kabyle", level: "Langue Maternelle" },
+            { name: "Arabe", level: "C2" },
+          ].map((lang, i) => (
+            <div key={i} className="language-card">
+              <span className="lang-name">{lang.name}</span>
+              <div className="lang-bar">
+                <div className={`lang-progress ${lang.level.replace(" ", "-")}`}></div>
+              </div>
+              <span className="lang-level">{lang.level}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* =========================
           SECTION CERTIFICATS
-      --------------------------- */}
+      ========================= */}
       <section id="certificates" className="certificates sect-pt4 sect-mt4">
         <h2 className="title-a text-center">Certificats</h2>
         <div className="line-mf"></div>
@@ -229,24 +299,55 @@ const Home = () => {
               <div className="cert-title">{cert.title}</div>
               <div className="cert-platform">{cert.platform}</div>
               {cert.pdf && (
-                <a href={cert.pdf} target="_blank" className="cert-link">Voir PDF</a>
+                <a href={cert.pdf} target="_blank" className="cert-link" rel="noopener noreferrer">Voir PDF</a>
               )}
             </div>
           ))}
         </div>
       </section>
 
-      {/* ---------------------------
-          FOOTER
-      --------------------------- */}
-      <footer id="footer" className="footer">
-        <div className="footer-container">
-          <div className="footer-contact">
-            <h3>Contact</h3>
-            <p>Email: <a href="mailto:yasmine@example.com">mezragueyasmine92@gmail.com</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/yasmine-mezrague-071a68319/overlay/about-this-profile/" target="_blank" rel="noopener noreferrer">Yasmine Mezrague</a></p>
+      {/* =========================
+          SECTION CENTRES D'INTERÊT
+      ========================= */}
+      <section id="interets" className="interets sect-pt4 sect-mt4">
+        <h2 className="title-a text-center">Centres d'Intérêt</h2>
+        <div className="line-mf"></div>
+
+        <div className="interets-grid">
+          {[
+            { name: "Dessin", icon: "fa-paint-brush" },
+            { name: "Lecture", icon: "fa-book" },
+            { name: "Voyages", icon: "fa-plane" },
+            { name: "Yoga", icon: "fa-person-running" },
+            { name: "Musique", icon: "fa-music" },
+          ].map((item, i) => (
+            <div key={i} className="interet-card">
+              <i className={`fa ${item.icon}`}></i>
+              <span>{item.name}</span>
+            </div>
+          ))}
+        </div>
+      </section><br></br><br></br>
+
+      {/* =========================
+          FOOTER MODERNE
+      ========================= */}
+      <footer id="footer" className="footer-modern">
+        <div className="footer-content">
+          <h3>Contactez-moi</h3>
+          <p>Vous pouvez me retrouver sur mes réseaux ou m'envoyer un email :</p>
+          <div className="footer-icons">
+            <a href="mailto:mezragueyasmine92@gmail.com" target="_blank" rel="noopener noreferrer">
+              <i className="fa fa-envelope"></i>
+            </a>
+            <a href="https://github.com/yasminemezrague11-informatique" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/yasmine-mezrague-071a68319/" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-linkedin"></i>
+            </a>
           </div>
-          <p>&copy; 2026 Yasmine Mezrague. Tous droits réservés.</p>
+          <p className="footer-copy">&copy; 2026 Yasmine Mezrague. Tous droits réservés.</p>
         </div>
       </footer>
 
