@@ -85,6 +85,18 @@ const Home = () => {
       window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
+  const scrollToSection = id => {
+  const nav = document.querySelector('.nav-links');
+  nav.classList.remove('active');
+
+  const section = document.getElementById(id);
+  if (section) {
+    const yOffset = -70;
+    const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  }
+};
+
 
   // ============================
   // RENDER : COMPOSANT HOME
@@ -115,12 +127,14 @@ const Home = () => {
 
         {/* Menu */}
         <ul className="nav-links">
-          <li><a href="#about">À propos</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#parcours">Parcours</a></li>
-          <li><a href="#portfolio">Projets</a></li>
-          <li><a href="#certificates">Certificats</a></li>
-          <li><a href="#footer">Contact</a></li>
+          <li>
+            <a href="#about" onClick={() => handleNavClick("about")}>À propos</a></li>
+<li><a href="#services" onClick={() => handleNavClick("services")}>Services</a></li>
+<li><a href="#parcours" onClick={() => handleNavClick("parcours")}>Parcours</a></li>
+<li><a href="#portfolio" onClick={() => handleNavClick("portfolio")}>Projets</a></li>
+<li><a href="#certificates" onClick={() => handleNavClick("certificates")}>Certificats</a></li>
+<li><a href="#footer" onClick={() => handleNavClick("footer")}>Contact</a>
+          </li>
         </ul>
 
         {/* Dark Mode Toggle */}
