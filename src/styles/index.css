@@ -819,6 +819,11 @@ body.dark-mode .interet-card span {
     margin-top: 1rem;
     display: none; /* menu caché */
   }
+  
+  .logo {
+    font-size: 1.25rem; /* plus petit sur mobile */
+    letter-spacing: 0.3px;
+  }
 
   /* si plus tard tu ajoutes un bouton burger */
   .navbar.active .nav-links {
