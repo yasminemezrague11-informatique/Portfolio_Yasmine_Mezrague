@@ -76,15 +76,18 @@ const Home = () => {
   // ----------------------------
   // FONCTION : NAVIGATION LISSÉE
   // ----------------------------
-  const handleNavClick = (id) => {
-    setMenuOpen(false);
-    const section = document.getElementById(id);
-    if (section) {
-      const yOffset = -70; // ajuste selon la hauteur du header
-      const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: "smooth" });
-    }
-  };
+  const handleNavClick = id => {
+  const nav = document.querySelector('.nav-links');
+  nav.classList.remove('active');
+
+  const section = document.getElementById(id);
+  if (section) {
+    const yOffset = -70;
+    const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  }
+};
+
   const scrollToSection = id => {
   const nav = document.querySelector('.nav-links');
   nav.classList.remove('active');
