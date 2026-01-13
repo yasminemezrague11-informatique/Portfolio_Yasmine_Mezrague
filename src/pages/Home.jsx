@@ -58,12 +58,11 @@ const projects = [
 // ---------------------------
 // Composant principal Home
 // ---------------------------
-
+const [menuOpen, setMenuOpen] = useState(false);
 
 const Home = () => {
   // Gestion du mode sombre
   const [darkMode, setDarkMode] = useState(true);
-  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     if (darkMode) document.body.classList.add("dark-mode");
@@ -76,7 +75,7 @@ const Home = () => {
       {/* =========================
           NAVBAR
       ========================= */}
-      <nav className={`navbar ${menuOpen ? "active" : ""}`}>
+      <nav className="navbar">
         <a href="#debut" className="logo">Yasmine Mezrague</a>
         <ul className="nav-links">
           <li><a href="#about">À propos</a></li>
@@ -88,10 +87,6 @@ const Home = () => {
         </ul>
         <button className="dark-mode-toggle" onClick={() => setDarkMode(!darkMode)}>
           {darkMode ? "☀️" : "🌙"}
-        </button>
-
-        <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
-               ☰
         </button>
       </nav>
 
