@@ -1052,3 +1052,100 @@ body.dark-mode .interet-card span {
 .logo:hover {
   letter-spacing: 1.2px;
 }
+
+
+/* ======================================================
+   MENU HAMBURGER – MOBILE
+   ====================================================== */
+@media (max-width: 768px) {
+
+  /* Navbar structure */
+  .navbar {
+    padding: 1rem 1.2rem;
+  }
+
+  /* Logo déjà réduit (tu l’as fait 👍) */
+  .logo {
+    font-size: 1.25rem;
+  }
+
+  /* Bouton hamburger */
+  .menu-toggle {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #ffffff;
+    display: block;
+  }
+
+  body:not(.dark-mode) .menu-toggle {
+    color: #0f172a;
+  }
+
+  /* Cache la nav desktop */
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.15);
+  }
+
+  body:not(.dark-mode) .nav-links {
+    border-top: 1px solid rgba(0,0,0,0.1);
+  }
+
+  /* Menu ouvert */
+  .navbar.active .nav-links {
+    display: flex;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+    padding: 0.3rem 0;
+  }
+}
+
+/* ======================================================
+   MOBILE – CACHER LE LOGO TEXTE
+   AFFICHER UNIQUEMENT LE MENU ☰
+   ====================================================== */
+@media (max-width: 768px) {
+
+  /* Cacher le nom / logo texte */
+  .logo {
+    display: none;
+  }
+
+  /* Bouton menu hamburger */
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 1.9rem;
+    cursor: pointer;
+    color: #ffffff;
+  }
+
+  body:not(.dark-mode) .menu-toggle {
+    color: #0f172a;
+  }
+
+  /* Nav links cachés par défaut */
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+  }
+
+  /* Menu ouvert */
+  .navbar.active .nav-links {
+    display: flex;
+  }
+}
