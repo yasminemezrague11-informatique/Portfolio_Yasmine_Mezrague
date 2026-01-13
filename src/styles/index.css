@@ -82,7 +82,19 @@ body.dark-mode h3 {
   cursor: pointer;
   color: #ffffff;
 }
+/* ===== LOGO RAFFINÉ ===== */
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
 
+.logo:hover {
+  letter-spacing: 1.2px;
+}
 /* ===== INTRO ===== */
 .intro {
   height: 100vh;
@@ -822,7 +834,7 @@ body.dark-mode .interet-card span {
   }
   
   .logo {
-    font-size: 1rem; /* plus petit sur mobile */
+    font-size: 0.95rem;
     letter-spacing: 0.3px;
   }
 
@@ -840,27 +852,40 @@ body.dark-mode .interet-card span {
   }
 
   /* ===== INTRO (DÉBUT) ===== */
+  
   .intro {
-    height: auto;
-    padding: 6rem 1rem 4rem;
-    background: none !important; /* SUPPRIME L'IMAGE */
-  }
+  min-height: unset;
+  height: auto;
+  background-image: none !important;
+  background: none !important;
+  padding: 5.5rem 1rem 3.5rem;
+}
 
-  .overlay-itro {
-    display: none;
-  }
+/* Supprime toute couche liée à l'image */
+.overlay-itro {
+  display: none !important;
+}
+
+/* Sécurité : empêche tout héritage visuel */
+.bg-image {
+  background-image: none !important;
+}
+
+  
 
   .intro-content {
     text-align: center;
   }
 
   .intro-title {
-    font-size: 2rem;
-    line-height: 1.3;
+    font-size: 1.9rem;
+    line-height: 1.25;
+    margin-bottom: 0.6rem;
   }
 
   .intro-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+    line-height: 1.4;
   }
 
   .intro-icons {
@@ -1041,18 +1066,6 @@ body.dark-mode .interet-card span {
 
 
 
-/* ===== LOGO RAFFINÉ ===== */
-.logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.75rem;
-  font-weight: 600;
-  letter-spacing: 0.6px;
-  color: #ffffff;
-  transition: all 0.3s ease;
-}
 
-.logo:hover {
-  letter-spacing: 1.2px;
-}
 
 
