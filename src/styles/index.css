@@ -1012,7 +1012,7 @@ body.dark-mode .interet-card span {
 
   .cert-platform,
   .cert-link {
-    margin-left: auto;
+    text-align: right;
   }
 
   /* ===== CENTRES D’INTÉRÊT ===== */
