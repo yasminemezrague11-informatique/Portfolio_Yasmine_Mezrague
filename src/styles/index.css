@@ -903,9 +903,12 @@ body.dark-mode .interet-card span {
   .about-mf {
     padding-left: 1rem;
     padding-right: 1rem;
-    border: 2px solid rgba(0, 120, 255, 0.3);
   }
 
+  #about {
+  margin-top: 2rem;   /* au lieu de 4rem */
+  padding-top: 3rem;  /* au lieu de 6rem */
+}
   .about-flex {
     grid-template-columns: 1fr;
   }
@@ -916,6 +919,7 @@ body.dark-mode .interet-card span {
 
   .about-right {
     padding: 2rem 1.5rem;
+    border: 3px solid rgba(0, 120, 255, 0.3);
   }
 
   .about-right h3 {
@@ -1008,7 +1012,7 @@ body.dark-mode .interet-card span {
 
   .cert-platform,
   .cert-link {
-    text-align: left;
+    text-align: right;
   }
 
   /* ===== CENTRES D’INTÉRÊT ===== */
