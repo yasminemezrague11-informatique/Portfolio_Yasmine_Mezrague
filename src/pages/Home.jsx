@@ -255,7 +255,7 @@ const Home = () => {
         <div className="timeline">
           {[
             { period: "(En cours)", title: "LICENCE 3 INFORMATIQUE", place: "Université d’Artois, Lens, France" },
-            { period: "09/2024 – 06/2025", title: "MASTER 1 - SPÉCIALITÉ ISI", place: "Université de Mouloud Mammerie, Lens, France" },
+            { period: "09/2024 – 06/2025", title: "MASTER 1 - SPÉCIALITÉ ISI", place: "Université de Mouloud Mammerie, Tizi-Ouzou, Algérie" },
             { period: "09/2021 – 06/2024", title: "LICENCE 3 INFORMATIQUE", place: "Université de Mouloud Mammerie, Tizi-Ouzou, Algérie" },
             { period: "09/2018 – 07/2021", title: "BAC SCIENCES EXPÉRIMENTALES", place: "Lycée des Martyrs Chekroun, Tizi-Ouzou, Algérie" }
           ].map((item, i) => (
