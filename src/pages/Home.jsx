@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles/index.css";
 import avatar from "../assets/avatar.jpg";
+import FontImage from "../assets/Font.png";  
 
 // ============================
 // LISTE DES PROJETS
@@ -153,8 +154,10 @@ const Home = () => {
         id="debut"
         className="intro bg-image"
         style={{
-          backgroundImage:
-            "url(https://www.chalmers.se/_next/image/?url=https%3A%2F%2Fcms.www.chalmers.se%2FMedia%2Fmb3hi4kn%2Fcoding-7-1920.jpg&w=3840&q=85)",
+          backgroundImage: `url(${FontImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          height: "100vh",
         }}
       >
         <div className="overlay-itro"></div>
